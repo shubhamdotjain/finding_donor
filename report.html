@@ -11792,7 +11792,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11979,24 +11979,15 @@ Name: income, dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Total number of records</span>
 <span class="n">n_records</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># TODO: Number of records where individual&#39;s income is more than $50,000</span>
-<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
-<span class="n">count1</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="s2">&quot;&gt;50K&quot;</span><span class="p">:</span>
-        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">count1</span><span class="o">+=</span><span class="mi">1</span>
-<span class="n">n_greater_50k</span> <span class="o">=</span> <span class="n">count</span>
-
-<span class="c1"># TODO: Number of records where individual&#39;s income is at most $50,000</span>
-<span class="n">n_at_most_50k</span> <span class="o">=</span> <span class="n">count1</span>
+<span class="n">n_greater_50k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&gt;50K&#39;</span><span class="p">])</span>
+<span class="n">n_at_most_50k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&lt;=50K&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Percentage of individuals whose income is more than $50,000</span>
 <span class="n">greater_percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_greater_50k</span><span class="o">*</span><span class="mf">100.0</span><span class="p">)</span><span class="o">/</span><span class="n">n_records</span>
@@ -12054,7 +12045,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Split the data into features and target label</span>
@@ -12665,7 +12656,7 @@ U+P/B1KwKjX8TqWAAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Log-transform the skewed features</span>
@@ -13201,7 +13192,7 @@ QyMEAAAA6A2NEAAAAKA3/j894xEi5w1Z6AAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import sklearn.preprocessing.StandardScaler</span>
@@ -13476,7 +13467,7 @@ QyMEAAAA6A2NEAAAAKA3/j894xEi5w1Z6AAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: One-hot encode the &#39;features_raw&#39; data using pandas.get_dummies()</span>
@@ -13485,10 +13476,18 @@ QyMEAAAA6A2NEAAAAKA3/j894xEi5w1Z6AAAAABJRU5ErkJggg==
 <span class="n">features</span><span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">features_raw</span><span class="p">,</span><span class="n">prefix</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 <span class="c1"># TODO: Encode the &#39;income_raw&#39; data to numerical values</span>
 
-<span class="n">income</span> <span class="o">=</span> <span class="n">income_raw</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span><span class="s2">&quot;&gt;50K&quot;</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
-
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">income</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">income_raw</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">income</span>
+
+<span class="c1"># print le.inverse_transform(income)</span>
+
+<span class="c1"># income = income_raw.apply(lambda x: 1 if x ==&quot;&gt;50K&quot; else 0)</span>
+
+
+<span class="c1"># print income</span>
 
 <span class="c1"># Print the number of features after one-hot encoding</span>
 <span class="n">encoded</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -13508,68 +13507,7 @@ QyMEAAAA6A2NEAAAAKA3/j894xEi5w1Z6AAAAABJRU5ErkJggg==
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0        0
-1        0
-2        0
-3        0
-4        0
-5        0
-6        0
-7        1
-8        1
-9        1
-10       1
-11       1
-12       0
-13       0
-14       0
-15       0
-16       0
-17       0
-18       1
-19       1
-20       0
-21       0
-22       0
-23       0
-24       1
-25       0
-26       0
-27       0
-28       0
-29       0
-        ..
-45192    0
-45193    0
-45194    1
-45195    1
-45196    0
-45197    1
-45198    1
-45199    0
-45200    0
-45201    0
-45202    0
-45203    0
-45204    1
-45205    0
-45206    0
-45207    0
-45208    0
-45209    0
-45210    0
-45211    0
-45212    0
-45213    0
-45214    0
-45215    0
-45216    0
-45217    0
-45218    0
-45219    0
-45220    0
-45221    1
-Name: income, dtype: int64
+<pre>[0 0 0 ..., 0 0 1]
 103 total features after one-hot encoding.
 [&#39;age&#39;, &#39;education-num&#39;, &#39;capital-gain&#39;, &#39;capital-loss&#39;, &#39;hours-per-week&#39;, &#39;workclass_ Federal-gov&#39;, &#39;workclass_ Local-gov&#39;, &#39;workclass_ Private&#39;, &#39;workclass_ Self-emp-inc&#39;, &#39;workclass_ Self-emp-not-inc&#39;, &#39;workclass_ State-gov&#39;, &#39;workclass_ Without-pay&#39;, &#39;education_level_ 10th&#39;, &#39;education_level_ 11th&#39;, &#39;education_level_ 12th&#39;, &#39;education_level_ 1st-4th&#39;, &#39;education_level_ 5th-6th&#39;, &#39;education_level_ 7th-8th&#39;, &#39;education_level_ 9th&#39;, &#39;education_level_ Assoc-acdm&#39;, &#39;education_level_ Assoc-voc&#39;, &#39;education_level_ Bachelors&#39;, &#39;education_level_ Doctorate&#39;, &#39;education_level_ HS-grad&#39;, &#39;education_level_ Masters&#39;, &#39;education_level_ Preschool&#39;, &#39;education_level_ Prof-school&#39;, &#39;education_level_ Some-college&#39;, &#39;martial-status_ Divorced&#39;, &#39;martial-status_ Married-AF-spouse&#39;, &#39;martial-status_ Married-civ-spouse&#39;, &#39;martial-status_ Married-spouse-absent&#39;, &#39;martial-status_ Never-married&#39;, &#39;martial-status_ Separated&#39;, &#39;martial-status_ Widowed&#39;, &#39;occupation_ Adm-clerical&#39;, &#39;occupation_ Armed-Forces&#39;, &#39;occupation_ Craft-repair&#39;, &#39;occupation_ Exec-managerial&#39;, &#39;occupation_ Farming-fishing&#39;, &#39;occupation_ Handlers-cleaners&#39;, &#39;occupation_ Machine-op-inspct&#39;, &#39;occupation_ Other-service&#39;, &#39;occupation_ Priv-house-serv&#39;, &#39;occupation_ Prof-specialty&#39;, &#39;occupation_ Protective-serv&#39;, &#39;occupation_ Sales&#39;, &#39;occupation_ Tech-support&#39;, &#39;occupation_ Transport-moving&#39;, &#39;relation_ Husband&#39;, &#39;relation_ Not-in-family&#39;, &#39;relation_ Other-relative&#39;, &#39;relation_ Own-child&#39;, &#39;relation_ Unmarried&#39;, &#39;relation_ Wife&#39;, &#39;race_ Amer-Indian-Eskimo&#39;, &#39;race_ Asian-Pac-Islander&#39;, &#39;race_ Black&#39;, &#39;race_ Other&#39;, &#39;race_ White&#39;, &#39;sex_ Female&#39;, &#39;sex_ Male&#39;, &#39;native-country_ Cambodia&#39;, &#39;native-country_ Canada&#39;, &#39;native-country_ China&#39;, &#39;native-country_ Columbia&#39;, &#39;native-country_ Cuba&#39;, &#39;native-country_ Dominican-Republic&#39;, &#39;native-country_ Ecuador&#39;, &#39;native-country_ El-Salvador&#39;, &#39;native-country_ England&#39;, &#39;native-country_ France&#39;, &#39;native-country_ Germany&#39;, &#39;native-country_ Greece&#39;, &#39;native-country_ Guatemala&#39;, &#39;native-country_ Haiti&#39;, &#39;native-country_ Holand-Netherlands&#39;, &#39;native-country_ Honduras&#39;, &#39;native-country_ Hong&#39;, &#39;native-country_ Hungary&#39;, &#39;native-country_ India&#39;, &#39;native-country_ Iran&#39;, &#39;native-country_ Ireland&#39;, &#39;native-country_ Italy&#39;, &#39;native-country_ Jamaica&#39;, &#39;native-country_ Japan&#39;, &#39;native-country_ Laos&#39;, &#39;native-country_ Mexico&#39;, &#39;native-country_ Nicaragua&#39;, &#39;native-country_ Outlying-US(Guam-USVI-etc)&#39;, &#39;native-country_ Peru&#39;, &#39;native-country_ Philippines&#39;, &#39;native-country_ Poland&#39;, &#39;native-country_ Portugal&#39;, &#39;native-country_ Puerto-Rico&#39;, &#39;native-country_ Scotland&#39;, &#39;native-country_ South&#39;, &#39;native-country_ Taiwan&#39;, &#39;native-country_ Thailand&#39;, &#39;native-country_ Trinadad&amp;Tobago&#39;, &#39;native-country_ United-States&#39;, &#39;native-country_ Vietnam&#39;, &#39;native-country_ Yugoslavia&#39;]
 </pre>
@@ -13593,7 +13531,7 @@ Name: income, dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import train_test_split</span>
@@ -13663,7 +13601,7 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
@@ -13672,24 +13610,21 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 
 <span class="n">predicted</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
 
+<span class="c1">#Given that models predicted an individual made more than 50k, true_pos= n_greater_50k, which was actually </span>
+<span class="c1">#predicted right by the model, false positive=n_at_most_50, which was not predicted right, while false negative and</span>
+<span class="c1">#false positive are zero considering the model</span>
+<span class="n">true_pos</span> <span class="o">=</span> <span class="n">n_greater_50k</span>
 
-<span class="n">true_pos</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">income</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">g</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">true_neg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">income</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">g</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">false_pos</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">income</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">g</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">false_neg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">income</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">g</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">true_neg</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">false_pos</span> <span class="o">=</span> <span class="n">n_at_most_50k</span>
+<span class="n">false_neg</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="n">recall</span> <span class="o">=</span> <span class="n">true_pos</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">true_pos</span> <span class="o">+</span> <span class="n">false_neg</span><span class="p">)</span>
 <span class="n">precision</span> <span class="o">=</span> <span class="n">true_pos</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">true_pos</span> <span class="o">+</span> <span class="n">false_pos</span><span class="p">)</span>
 <span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">true_pos</span> <span class="o">+</span> <span class="n">true_neg</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">income</span><span class="p">))</span>
 <span class="n">fscore</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">precision</span><span class="o">*</span><span class="n">recall</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="n">precision</span><span class="p">)</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>
 
-<span class="c1"># from sklearn.metrics import fbeta_score,accuracy_score</span>
-<span class="c1"># accuracy1 = accuracy_score(income,pred)</span>
-<span class="c1"># print accuracy1</span>
 
-<span class="c1"># # TODO: Calculate F-score using the formula above for beta = 0.5</span>
-
-<span class="c1"># fscore1 = fbeta_score(income,pred,beta=0.5)</span>
-<span class="c1"># print fscore1</span>
 <span class="c1"># Print the results </span>
 
 <span class="k">print</span> <span class="s2">&quot;Naive Predictor: [Accuracy score: {:.4f}, F-score: {:.4f}]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">fscore</span><span class="p">)</span>
@@ -13705,9 +13640,7 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.636548582548
-0.449752077659
-Naive Predictor: [Accuracy score: 0.6365, F-score: 0.4498]
+<pre>Naive Predictor: [Accuracy score: 0.2478, F-score: 0.2917]
 </pre>
 </div>
 </div>
@@ -15243,8 +15176,8 @@ TkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p>The LR model is able to predict rather classify the individual income into two categories. These two categories are if the individual makes more than 50000 and less than or equal to 50000. It identify by using the cues or indicator such workclass, education level, native country etc</p>
-<p>First the model learns how the indicators or factors lead to whether the individual makes more than 50k or not. The model can do this since we have previous existing data on people who makes more than 50k and who don't. Based on those factors, model would output a weight on each factor.</p>
-<p>In second step we don't have information about the individual's income. Nowthe model predicts considering the weights of factors that an individual's income. These weights are known to the model that were learned by it from the existing data. With the weights of factors and new factors of each individual the model would now predict the likeliness of an individual income, ie whether he makes more than 50k or not.</p>
+<p>First the model learns how the indicators or factors lead to whether the individual makes more than 50k or not. The model can do this since we have previous existing data on people who makes more than 50k and who don't. Based on those factors, model would output a weight on each factor. LR gives each feature a weight by minimizing a cost function.</p>
+<p>In second step we don't have information about the individual's income. Nowthe model predicts considering the weights of factors that an individual's income. These weights are known to the model that were learned by it from the existing data. We take all feature values multiply them with their weights accordingly. We then sum up all the results.This final result is applied to a special function called Sigmoid/Logistic function which only outputs values between 0-1 which can be interpreted as the probability of our positive label, ie whether he makes more than 50k or not.</p>
 
 </div>
 </div>
@@ -15277,7 +15210,7 @@ TkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39;, &#39;make_scorer&#39;, and any other necessary libraries</span>
@@ -15292,9 +15225,10 @@ TkSuQmCC
 <span class="n">random_state</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
 <span class="n">C</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
 <span class="n">solver</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="s1">&#39;sag&#39;</span><span class="p">]</span>
+<span class="n">penalty</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span><span class="s1">&#39;l2&#39;</span><span class="p">]</span>
+<span class="c1"># parameters= {&#39;penalty&#39;:penalty,&#39;C&#39;:C}</span>
 <span class="n">parameters</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="n">C</span><span class="p">}</span>
 
-<span class="c1"># TODO: Make an fbeta_score scoring object</span>
 <span class="n">scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">fbeta_score</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="c1"># TODO: Perform grid search on the classifier using &#39;scorer&#39; as the scoring method</span>
@@ -15372,13 +15306,13 @@ Final F-score on the testing data: 0.7008
 <tbody>
 <tr>
 <td style="text-align:center">Accuracy Score</td>
-<td style="text-align:center">0.6365</td>
+<td style="text-align:center">0.2478</td>
 <td style="text-align:center">0.8483</td>
 <td style="text-align:center">0.8494</td>
 </tr>
 <tr>
 <td style="text-align:center">F-score</td>
-<td style="text-align:center">0.4498</td>
+<td style="text-align:center">0.2917</td>
 <td style="text-align:center">0.6993</td>
 <td style="text-align:center">0.7008</td>
 </tr>
@@ -15394,7 +15328,10 @@ Final F-score on the testing data: 0.7008
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-The model accuracy and F-score are better after tuning. Though they didn't change by much which shows that choosen model was tuned to best parameters. As compared to benchmark predictior, the scores got better by a huge difference. In naive baye's each feature is weighted independenly based on it's correlation with label while in logistic regression weights together all the factors.</p>
+The model accuracy and F-score are better after tuning. Though they didn't change by much which shows that choosen model was tuned to best parameters. 
+When both C and penalty were taken as parameters(as suggested in previous review) the acuracy score and F-score were 0.8484 and 0.6998 respectively
+which were still better than unomptimized one
+As compared to benchmark predictior, the scores got better by a huge difference. In the Naive predictor we assumed that everyone was earning more than 50K and the ones which were predicted by the model was very low in that case.</p>
 
 </div>
 </div>
